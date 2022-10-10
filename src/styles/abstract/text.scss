@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&family=Poppins:wght@200;300;400;500;700&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+// Heading
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Nunito", sans-serif;
+}
+
+// text
+a {
+    text-decoration: none;
+    color: var(--main-text-color);
+    transition: all 100ms ease-in;
+
+    &:hover {
+        color: var(--hover-text-color);
+        font-weight: 500;
+    }
+}
+
+.fw-semibold {
+    font-weight: 600;
+}
+
+.fw-bold {
+    font-weight: 700;
+}

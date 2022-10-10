@@ -1,0 +1,17 @@
+:root {
+    // Main colors
+    --secondary-color: #f0f1f3;
+    --accent-color: #ffb703;
+
+    // Text colors
+    --main-text-color: #183153;
+    --hover-text-color: #234779;
+}
+
+body {
+    color: var(--main-text-color);
+}
+
+.accentColor {
+    color: var(--accent-color);
+}
