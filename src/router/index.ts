@@ -7,10 +7,10 @@ const routes: Array<RouteRecordRaw> = [
 		component: () => import("../pages/Index.vue"),
 	},
 	{
-		path: "/search/:search",
-		alias: "/search",
-		name: "Search",
-		component: () => import("../pages/Search.vue"),
+		path: "/meals/:search",
+		alias: "/meals",
+		name: "Search meals",
+		component: () => import("../pages/Meals.vue"),
 	},
 ];
 

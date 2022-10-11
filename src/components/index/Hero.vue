@@ -9,7 +9,7 @@
             is your ideal helper in the
             kitchen.
             Cooking has never been so easy.
-            Every day is a party with <span class="fw-semibold"> Everyday Cooking</span>
+            Every day is a party with <span class="fw-semibold"> Everyday Cooking.</span>
         </div>
     </div>
 </template>
@@ -23,6 +23,21 @@
     flex-direction: column;
     justify-content: center;
 
+    @media (max-width: 600px) {
+        padding-top: 100px;
+        width: 95%;
+        margin: auto;
+
+        h2 {
+            font-size: 2rem !important;
+            line-height: 2rem !important;
+        }
+
+        .subtitle {
+            max-width: 80%;
+        }
+    }
+
     h2 {
         width: 100%;
         font-size: 3rem;
@@ -34,14 +49,14 @@
 
         a {
             min-width: 100px;
-
-
         }
     }
 
     .subtitle {
         text-align: center;
         margin-top: 2rem;
+        margin-left: auto;
+        margin-right: auto;
 
     }
 

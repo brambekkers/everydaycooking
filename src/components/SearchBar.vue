@@ -12,12 +12,12 @@ const searchText = ref("")
 
 async function search() {
     // If user is not on the search page navigate to searchpage and give the correct param
-    if (!route.path.includes('search')) {
-        router.push(`./search/${searchText.value}`)
+    if (!route.path.includes('meals')) {
+        router.push(`./meals/${searchText.value}`)
         return
     }
+    mealsStore.mergeMaels(await apiStore.searchMeal(searchText.value))
 
-    mealsStore.meals = await apiStore.searchMeal(searchText.value)
 
 }
 

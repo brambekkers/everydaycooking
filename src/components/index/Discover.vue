@@ -1,6 +1,6 @@
 <template>
     <div id="discover">
-        test
+
     </div>
 </template>
 
@@ -11,7 +11,8 @@
 <style lang="scss" scoped>
 #discover {
     width: 100%;
-    height: 600px;
+    height: 3000px;
     background-color: var(--secondary-color);
+    z-index: -1;
 }
 </style>

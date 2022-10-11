@@ -1,4 +1,7 @@
 <script setup>
+import Menu from '../components/nav/Menu.vue'
+import DarkmodeToggle from '../components/nav/DarkmodeToggle.vue'
+
 import { ref } from 'vue'
 const darkmode = ref(false)
 </script>
@@ -10,15 +13,8 @@ const darkmode = ref(false)
                 <i class="fa-solid fa-utensils" />
             </router-link>
 
-            <div class="menu">
-                <router-link to="/">Start</router-link>
-                <router-link to="/search">Find recipes</router-link>
-                <router-link to="/favorites">Favorites</router-link>
-            </div>
-
-            <!-- Darkmode toggle -->
-            <i class="darkmode fa-solid fa-sun" v-if="!darkmode" @click="darkmode = !darkmode" />
-            <i class="darkmode fa-solid fa-moon" v-if="darkmode" @click="darkmode = !darkmode" />
+            <Menu />
+            <DarkmodeToggle />
 
 
             <i class=" fa-solid fa-utensils" />
@@ -31,6 +27,7 @@ const darkmode = ref(false)
 <style lang="scss" scoped>
 #navbar {
     height: 75px;
+    max-width: 100vw;
     padding: 0 2rem;
 
     display: flex;
@@ -45,11 +42,7 @@ const darkmode = ref(false)
         align-items: center;
         gap: 1rem;
 
-        .menu {
-            display: flex;
-            gap: 1.5rem;
-            margin: 0 3rem;
-        }
+
 
         i {
             cursor: pointer;
