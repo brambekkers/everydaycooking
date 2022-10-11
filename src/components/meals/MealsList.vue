@@ -20,14 +20,23 @@ defineProps({
 <style lang="scss" scoped>
 .mealList {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-around;
     margin: 3rem 0;
-    gap: 2rem;
+
+    padding-bottom: 2rem;
 
     .meal {
         width: 31%;
         aspect-ratio: 4/5;
+
+        margin: 1rem;
+
+        &:last-child {
+            margin-right: auto;
+        }
     }
+
+
 }
 </style>
