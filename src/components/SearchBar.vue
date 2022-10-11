@@ -48,6 +48,8 @@ onMounted(() => {
     border-radius: 32px;
     position: relative;
     background-color: var(--input-background-color);
+    position: relative;
+    z-index: 2;
 
     display: flex;
     min-width: 100px;

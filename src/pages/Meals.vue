@@ -7,8 +7,6 @@ import MealsList from '../components/meals/MealsList.vue'
 import NoMealsFound from '../components/meals/NoMealsFound.vue'
 import SearchText from '../components/meals/SearchText.vue'
 
-import { useMealsStore } from '../store'
-const mealsStore = useMealsStore()
 const hasSearch = ref(false)
 const latestMeals = ref([])
 

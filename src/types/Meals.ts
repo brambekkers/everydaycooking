@@ -1,5 +1,6 @@
 export interface MealStore {
 	meals: Meal[];
+	randomMeals: Meal[];
 	favorites: string[];
 }
 

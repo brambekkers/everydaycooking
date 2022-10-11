@@ -36,5 +36,17 @@ export const useApiStore = defineStore("apiStore", {
 				this.isSearching = false;
 			}
 		},
+		async getRandomMeal() {
+			const result = await fetch(`${this.baseUrl}random.php`);
+			const { meals } = await result.json();
+			if (!meals?.[0]) return null;
+			return meals[0];
+		},
+		async getThreeRandomMeals() {
+			const meal1 = await this.getRandomMeal();
+			const meal2 = await this.getRandomMeal();
+			const meal3 = await this.getRandomMeal();
+			return [meal1, meal2, meal3];
+		},
 	},
 });

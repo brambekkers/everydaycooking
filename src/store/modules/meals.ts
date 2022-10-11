@@ -7,6 +7,7 @@ export const useMealsStore = defineStore("mealsStore", {
 	state: () => {
 		return {
 			meals: [],
+			randomMeals: [],
 			favorites: [],
 		} as MealStore;
 	},
@@ -30,6 +31,9 @@ export const useMealsStore = defineStore("mealsStore", {
 		},
 		getMealByID(id: string) {
 			return this.meals.find((meal) => meal.idMeal === id);
+		},
+		async addRandomMeals() {
+			this.randomMeals = await useApiStore().getThreeRandomMeals();
 		},
 		addToFavorite(id: string) {
 			// Create an array with unique items

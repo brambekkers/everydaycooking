@@ -8,7 +8,10 @@ const mealStore = useMealsStore()
 const isDarkMode = ref(true)
 
 // When loading the app for the first time, check if there are favorite recipes in local storage
-onMounted(() => mealStore.getFavoritesFromLocalStorage())
+onMounted(() => {
+	mealStore.getFavoritesFromLocalStorage()
+	mealStore.addRandomMeals();
+})
 </script>
 
 <template>

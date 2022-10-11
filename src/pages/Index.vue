@@ -24,13 +24,14 @@ import SearchBar from '../components/SearchBar.vue'
 <style lang="scss" scoped>
 #index {
     position: absolute;
-    inset: 5rem 0;
+    inset: 0;
+    top: 5rem;
+
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: calc(100vh - 75px);
-    overflow: hidden;
+    max-height: 100vh;
 
     .searchContainer {
         width: 600px;
@@ -43,14 +44,14 @@ import SearchBar from '../components/SearchBar.vue'
     }
 
     .float {
-        position: absolute;
+        position: fixed;
         opacity: 0.3;
-        z-index: -1;
+        z-index: 1;
     }
 
     .baking {
         left: 5%;
-        top: 30%;
+        top: 10%;
         width: 10vw;
         max-width: 400px;
     }
@@ -67,6 +68,8 @@ import SearchBar from '../components/SearchBar.vue'
 
     .pot {
         top: 70%;
+        left: -5%;
+
         width: 20vw;
         max-width: 700px;
 
