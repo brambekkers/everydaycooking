@@ -11,13 +11,10 @@ const darkmode = ref(false)
         <div class="navContainer">
             <router-link class="logo" to="/">
                 <i class="fa-solid fa-utensils" />
+                <button>Everyday Cooking</button>
             </router-link>
-
             <Menu />
             <DarkmodeToggle />
-
-
-            <i class=" fa-solid fa-utensils" />
         </div>
     </nav>
 </template>
@@ -29,6 +26,7 @@ const darkmode = ref(false)
     height: 75px;
     max-width: 100vw;
     padding: 0 2rem;
+    background-color: var(--background-secondary);
 
     display: flex;
     justify-content: center;
@@ -49,11 +47,30 @@ const darkmode = ref(false)
         }
 
         .logo {
-
+            height: 100%;
             margin-right: auto;
+            display: flex;
+            align-items: center;
 
             i {
                 font-size: 2rem;
+                margin-right: 1rem;
+            }
+
+            button {
+                font-size: 1.3rem;
+                border: none;
+                background: none;
+                cursor: pointer;
+                color: var(--accent-color);
+                font-weight: 700;
+            }
+
+            @media (max-width: 900px) {
+                button {
+                    display: none;
+                }
+
             }
         }
 

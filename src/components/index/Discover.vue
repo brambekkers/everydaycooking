@@ -15,4 +15,10 @@
     background-color: var(--secondary-color);
     z-index: -1;
 }
+
+.darkMode {
+    #discover {
+        background-color: black;
+    }
+}
 </style>

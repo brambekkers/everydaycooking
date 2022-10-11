@@ -1,5 +1,6 @@
 export interface MealStore {
 	meals: Meal[];
+	favorites: string[];
 }
 
 export interface Meal {

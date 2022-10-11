@@ -1,4 +1,7 @@
 <script setup>
+import CardHeader from '../components/meals/meal/CardHeader.vue'
+import VideoPlayer from '../components/meals/meal/VideoPlayer.vue'
+
 import { useRoute, useRouter } from 'vue-router'
 import { ref, onMounted } from 'vue'
 import { useMealsStore, useApiStore } from '../store'
@@ -8,7 +11,7 @@ const apiStore = useApiStore()
 const meal = ref(null)
 
 onMounted(async () => {
-    // Check if there is a meal ID avalible
+    // Check if there is a meal ID available
     const mealID = useRoute().params.mealID
     if (!mealID) useRouter.push('/meals')
 
@@ -25,8 +28,8 @@ onMounted(async () => {
 <template>
     <div class="card" v-if="meal">
         <img class="featuredImage" :src="meal.strMealThumb" />
-        <div class="cardBody">
-            <h2 class="title">{{meal.strMeal}}</h2>
+        <CardHeader :title="meal.strMeal" :id="meal.idMeal" />
+        <div class="card-body">
             <hr />
             <div class="instructionContainer">
 
@@ -43,7 +46,7 @@ onMounted(async () => {
                 </template>
             </ul>
             <p v-html="meal.strInstructions"></p>
-
+            <VideoPlayer :src="meal.strYoutube" />
         </div>
     </div>
 </template>

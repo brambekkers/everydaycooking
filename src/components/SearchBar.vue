@@ -47,12 +47,13 @@ onMounted(() => {
     border: solid 2px #183153;
     border-radius: 32px;
     position: relative;
-    background-color: white;
+    background-color: var(--input-background-color);
 
     display: flex;
     min-width: 100px;
     height: 64px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 3px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 3px -3px;
+    transition: all 0.2s ease-in;
 
     .search-icon {
         position: absolute;
@@ -60,7 +61,7 @@ onMounted(() => {
         left: 1.5rem;
         font-size: 1.3rem;
         translate: 0 -50%;
-        color: #183153
+        color: var(--main-text-color)
     }
 
     input {
@@ -71,10 +72,16 @@ onMounted(() => {
         font-size: 1rem;
         font-weight: bold;
         font-family: inherit;
+        color: inherit;
 
         &:focus-visible {
             outline: none;
+
         }
+    }
+
+    &:hover {
+        background-color: var(--input-hover-color);
     }
 }
 </style>

@@ -1,13 +1,9 @@
 
 <script setup lang="ts">
-import { defineProps, PropType } from "vue";
-
-import MealItem from './MealCardSmall.vue'
+import MealItem from './meal/MealCardSmall.vue'
 import { Meal } from '../../types/Meals'
 
-defineProps({
-    meals: Array as PropType<Meal[]>,
-});
+defineProps<{ meals: Meal[]; }>();
 </script>
 
 <template>
@@ -21,20 +17,38 @@ defineProps({
 .mealList {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     margin: 3rem 0;
-
+    gap: 3rem;
     padding-bottom: 2rem;
 
     .meal {
-        width: 31%;
-        aspect-ratio: 4/5;
+        aspect-ratio: 4/6;
+        height: 580px;
 
-        margin: 1rem;
 
-        &:last-child {
-            margin-right: auto;
+
+
+
+        &:last-child {}
+    }
+
+    @media (max-width: 900px) {
+        gap: 2rem;
+
+        .meal {
+            height: 460px;
         }
+    }
+
+    @media (max-width: 600px) {
+        gap: 1rem;
+
+        .meal {
+            width: 100%;
+            height: unset;
+        }
+
     }
 
 

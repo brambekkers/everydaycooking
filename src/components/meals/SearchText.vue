@@ -1,8 +1,8 @@
 <template>
     <div id="noMeals">
-        <i class="fa-regular fa-face-frown-open" />
-        <p>Oh no, no meals found... </p>
-        <p>Maybe try a different search term</p>
+        <i class="fa-solid fa-magnifying-glass" />
+        <p>Type the name of your dish in the search bar.</p>
+        <p>You can also enter an ingredient!</p>
     </div>
 </template>
 

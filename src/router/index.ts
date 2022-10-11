@@ -14,9 +14,14 @@ const routes: Array<RouteRecordRaw> = [
 	},
 	{
 		path: "/meal/:mealID",
-		alias: "/meals",
+		alias: "/meal",
 		name: "Meal",
 		component: () => import("../pages/Meal.vue"),
+	},
+	{
+		path: "/meals/favorites",
+		name: "Favorites",
+		component: () => import("../pages/Favorites.vue"),
 	},
 ];
 

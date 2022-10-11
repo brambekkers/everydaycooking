@@ -1,19 +1,17 @@
 
 <script setup lang="ts">
-import { defineProps, PropType } from "vue";
-import { Meal } from '../../types/Meals'
+import { Meal } from '../../../types/Meals'
+import CardHeader from './CardHeader.vue'
 
-defineProps({
-    meal: Object as PropType<Meal>,
-});
+defineProps<{ meal: Meal; }>();
 
 </script>
 
 <template>
     <div class="meal card">
         <img class="featuredImage" :src="meal.strMealThumb" />
-        <div class="cardBody">
-            <h2 class="title">{{meal.strMeal}}</h2>
+        <CardHeader :title="meal.strMeal" :id="meal.idMeal" />
+        <div class="card-body">
             <hr />
             <div class="instructionContainer">
                 <p v-html="meal.strInstructions"></p>
@@ -31,7 +29,7 @@ defineProps({
 
 
     .instructionContainer {
-        padding: 1rem 0;
+        padding: 0.4rem 0;
         flex-grow: 1;
         display: flex;
         align-items: center;

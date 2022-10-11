@@ -9,7 +9,7 @@
             is your ideal helper in the
             kitchen.
             Cooking has never been so easy.
-            Every day is a party with <span class="fw-semibold"> Everyday Cooking.</span>
+            Each day is a party with <span class="fw-semibold"> Everyday Cooking.</span>
         </div>
     </div>
 </template>
