@@ -2,7 +2,7 @@
 <script setup lang="ts">
 import { defineProps, PropType } from "vue";
 
-import MealItem from './Meal.vue'
+import MealItem from './MealCardSmall.vue'
 import { Meal } from '../../types/Meals'
 
 defineProps({

@@ -9,6 +9,7 @@ const router = useRouter()
 const route = useRoute()
 const searchText = ref("")
 
+const emit = defineEmits(['updateMeals'])
 
 async function search() {
     // If user is not on the search page navigate to searchpage and give the correct param
@@ -16,9 +17,9 @@ async function search() {
         router.push(`./meals/${searchText.value}`)
         return
     }
-    mealsStore.mergeMaels(await apiStore.searchMeal(searchText.value))
-
-
+    const newMeals = await apiStore.searchMeals(searchText.value)
+    mealsStore.mergeMaels(newMeals)
+    emit('updateMeals', newMeals);
 }
 
 onMounted(() => {

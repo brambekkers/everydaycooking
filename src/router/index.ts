@@ -12,6 +12,12 @@ const routes: Array<RouteRecordRaw> = [
 		name: "Search meals",
 		component: () => import("../pages/Meals.vue"),
 	},
+	{
+		path: "/meal/:mealID",
+		alias: "/meals",
+		name: "Meal",
+		component: () => import("../pages/Meal.vue"),
+	},
 ];
 
 export default createRouter({

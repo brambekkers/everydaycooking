@@ -1,6 +1,5 @@
 export interface MealStore {
 	meals: Meal[];
-	allMeals: Meal[];
 }
 
 export interface Meal {
