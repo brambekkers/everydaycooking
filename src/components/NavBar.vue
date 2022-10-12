@@ -19,20 +19,29 @@ import DarkmodeToggle from '@/components/nav/DarkmodeToggle.vue'
 
 <style lang="scss" scoped>
 #navbar {
-    height: 75px;
+    position: relative;
+    box-sizing: border-box;
+
+    z-index: 10;
     max-width: 100vw;
+    width: 100vw;
     padding: 0 2rem;
     background-color: var(--background-secondary);
 
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    box-shadow: rgb(50 50 93 / 10%) 0px 6px 12px -2px, rgb(0 0 0 / 4%) 0px 3px 7px -3px;
+
     .nav-container {
         height: 100%;
         width: 100%;
         max-width: 1400px;
+        height: 75px;
+
 
         display: flex;
         align-items: center;
@@ -79,6 +88,8 @@ import DarkmodeToggle from '@/components/nav/DarkmodeToggle.vue'
 
     .menu-mobile {
         display: none;
+        height: 50px;
+
 
         @media(max-width: 600px) {
             display: flex;

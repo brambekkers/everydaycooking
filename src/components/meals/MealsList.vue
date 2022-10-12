@@ -1,15 +1,26 @@
 
 <script setup lang="ts">
 import MealItem from '@/components/meals/meal/MealCardSmall.vue'
-import { Meal } from '@/types/Meals'
+import { Meal } from '@/types/meals'
+import { useApiStore } from '@/store'
 
 defineProps<{ meals: Meal[]; }>();
+const apiStore = useApiStore()
+
+
 </script>
 
 <template>
-    <div class="mealList">
-        <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" class="meal" />
-    </div>
+    <Transition
+enter-active-class="animate__animated animate__fadeIn"
+        leave-active-class="animate__animated animate__fadeOut" mode="out-in">
+        <div v-if="!apiStore.isSearching" class="mealList">
+            <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" class="meal" />
+        </div>
+        <div v-else class="loading">
+            Loading</div>
+    </Transition>
+
 </template>
 
 
@@ -44,6 +55,14 @@ defineProps<{ meals: Meal[]; }>();
         }
 
     }
+}
+
+.loading {
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 
 }

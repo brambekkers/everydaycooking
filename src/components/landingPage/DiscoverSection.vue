@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useMealsStore } from '../../store'
-import MealsList from '../meals/MealsList.vue'
+import { useMealsStore } from '@/store'
+import MealsList from '@/components/meals/MealsList.vue'
 
 const mealsStore = useMealsStore()
 </script>
@@ -28,6 +28,8 @@ const mealsStore = useMealsStore()
     justify-content: center;
     align-items: center;
 
+    flex-grow: 1;
+
     h2 {
         margin: 0;
         font-size: 2rem;
@@ -36,6 +38,9 @@ const mealsStore = useMealsStore()
     #meallist {
         position: relative;
         z-index: 5;
+        padding: 1rem;
+
+        gap: 2rem;
 
         :deep(.meal) {
             height: 400px;

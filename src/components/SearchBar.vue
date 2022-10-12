@@ -35,7 +35,7 @@ onMounted(() => {
 
 
 <template>
-    <div class="searchContainer">
+    <div class="search-container">
         <i class="search-icon fa-solid fa-magnifying-glass"></i>
         <input v-model="searchText" placeholder="Search meal..." type="text" @keyup.enter="search" />
     </div>
@@ -43,7 +43,7 @@ onMounted(() => {
 
 
 <style lang="scss" scoped>
-.searchContainer {
+.search-container {
     border: solid 2px #183153;
     border-radius: 32px;
     position: relative;

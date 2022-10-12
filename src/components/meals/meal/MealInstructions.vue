@@ -8,6 +8,7 @@ const cleanInstructions = computed(() => DOMPurify.sanitize(props.instructions))
 
 <template>
     <!-- eslint-disable-line no-use-before-define -->
+    <!-- allready cleaned v-html input -->
     <p v-html="cleanInstructions" />
 </template>
 

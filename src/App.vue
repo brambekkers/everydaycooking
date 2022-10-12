@@ -31,7 +31,7 @@ onMounted(() => {
 main {
 	max-width: 1400px;
 	margin: auto;
-	padding: 2rem 2rem;
+	padding: 8rem 2rem 5rem 2rem;
 	height: calc(100vh - 9rem);
 }
 

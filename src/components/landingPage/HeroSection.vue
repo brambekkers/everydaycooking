@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import SearchBar from '@/components/SearchBar.vue'
+</script>
+
 <template>
     <section class="hero">
         <h2>Take the hassle out of</h2>
@@ -11,6 +15,11 @@
             Cooking has never been so easy.
             Each day is a party with <span class="fw-semibold"> Everyday Cooking.</span>
         </div>
+
+        <div class="search-container">
+            <SearchBar />
+        </div>
+
     </section>
 </template>
 
@@ -58,6 +67,17 @@
         margin-left: auto;
         margin-right: auto;
 
+    }
+
+    .search-container {
+        width: 600px;
+        margin-top: 2rem;
+        margin-bottom: -32px;
+
+        @media (max-width: 600px) {
+            width: 95%;
+            margin: auto;
+        }
     }
 
 

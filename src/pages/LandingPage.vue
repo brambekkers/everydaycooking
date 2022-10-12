@@ -1,18 +1,13 @@
 <script setup lang="ts">
-import HeroSection from '../components/index/HeroSection.vue'
-import DiscoverSection from '../components/index/DiscoverSection.vue'
-import SearchBar from '../components/SearchBar.vue'
+import HeroSection from '@/components/landingPage/HeroSection.vue'
+import DiscoverSection from '@/components/landingPage/DiscoverSection.vue'
 
 </script>
 
 <template>
-    <div id="index">
+    <div id="landing">
         <HeroSection />
-        <div class="searchContainer">
-            <SearchBar />
-        </div>
         <DiscoverSection />
-
         <img class="floating-image chef" src="../assets/svg/Chef.svg" alt="chef">
         <img class="floating-image pot" src="../assets/svg/Pot.svg" alt="cooking pot">
         <img class="floating-image baking" src="../assets/svg/Baking.svg" alt="baking">
@@ -22,7 +17,7 @@ import SearchBar from '../components/SearchBar.vue'
 
 
 <style lang="scss" scoped>
-#index {
+#landing {
     position: absolute;
     inset: 0;
     top: 5rem;
@@ -30,17 +25,9 @@ import SearchBar from '../components/SearchBar.vue'
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    min-height: calc(100vh - 75px);
 
-    .searchContainer {
-        width: 600px;
-        margin-bottom: -16px;
 
-        @media (max-width: 600px) {
-            width: 95%;
-            margin: auto;
-        }
-    }
 
     .baking {
         left: 5%;

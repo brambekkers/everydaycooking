@@ -18,14 +18,18 @@ function updateLatestMeals(meals: Meal[]): void {
 
 <template>
     <div>
+
         <SearchBar @update-meals="updateLatestMeals" />
-        <SearchText v-if="!hasSearch" />
-        <!-- Only if there is a current search for a meal -->
-        <MealsList v-else-if="latestMeals?.length" :meals="latestMeals" />
+        <Transition
+enter-active-class="animate__animated animate__fadeIn"
+            leave-active-class="animate__animated animate__fadeOut" mode="out-in">
+            <SearchText v-if="!hasSearch" />
+            <!-- Only if there is a current search for a meal -->
+            <MealsList v-else-if="latestMeals?.length" :meals="latestMeals" />
 
-        <!-- If no meals are avalible show message -->
-        <NoMealsFound v-else />
-
+            <!-- If no meals are avalible show message -->
+            <NoMealsFound v-else />
+        </Transition>
         <img class="floating-image fried" src="../assets/svg/Fried.svg" alt="fried">
         <img class="floating-image mitten" src="../assets/svg/Mitten.svg" alt="mitten">
     </div>

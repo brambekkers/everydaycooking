@@ -9,8 +9,12 @@ function setDarkmode(val: boolean) {
 
 <template>
     <div>
-        <i v-if="!isDarkmode" class="darkmode fa-solid fa-sun" @click="setDarkmode(true)" />
-        <i v-if="isDarkmode" class="darkmode fa-solid fa-moon" @click="setDarkmode(false)" />
+        <Transition
+enter-active-class="animate__animated animate__tada"
+            leave-active-class="animate__animated animate__zoomOut animate__faster" mode="out-in">
+            <i v-if="!isDarkmode" class="darkmode fa-solid fa-sun" @click="setDarkmode(true)" />
+            <i v-else class="darkmode fa-solid fa-moon" @click="setDarkmode(false)" />
+        </Transition>
     </div>
 </template>
 
