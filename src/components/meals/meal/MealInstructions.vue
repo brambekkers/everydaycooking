@@ -10,3 +10,9 @@ const cleanInstructions = computed(() => DOMPurify.sanitize(props.instructions))
     <!-- eslint-disable-line no-use-before-define -->
     <p v-html="cleanInstructions" />
 </template>
+
+<style lang="scss">
+p {
+    margin: 0 0 1rem 0;
+}
+</style>

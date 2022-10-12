@@ -10,7 +10,7 @@ defineProps<{ meal: Meal; }>();
 
 <template>
     <div class="meal card">
-        <img class="featuredImage" :src="meal.strMealThumb" />
+        <img class="featured-image" :src="meal.strMealThumb" />
         <CardHeader :id="meal.idMeal" :title="meal.strMeal" />
         <div class="card-body">
             <hr />

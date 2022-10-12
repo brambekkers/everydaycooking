@@ -12,14 +12,14 @@ defineProps<{ meal: Meal; }>();
 
 <template>
     <div v-if="meal" class="card">
-        <img class="featuredImage" :src="meal.strMealThumb" />
+        <img class="featured-image" :src="meal.strMealThumb" />
         <CardHeader :id="meal.idMeal" :title="meal.strMeal" />
         <div class="card-body">
             <hr />
             <h3 class="subtitle">Ingredients
                 <MealTags v-if="meal.strTags" :tags="meal.strTags" />
             </h3>
-            <ul>
+            <ul class="ingredient-list">
                 <template v-for="item in 20">
                     <li v-if="meal[`strIngredient${item+1}`]" :key="item">
                         {{meal[`strIngredient${item+1}`]}}
@@ -28,6 +28,9 @@ defineProps<{ meal: Meal; }>();
                     </li>
                 </template>
             </ul>
+            <h3 class="subtitle">Let's make this meal
+
+            </h3>
             <MealInstructions :instructions="meal.strInstructions" />
             <VideoPlayer :src="meal.strYoutube" />
         </div>
@@ -42,7 +45,11 @@ defineProps<{ meal: Meal; }>();
     align-items: center;
 }
 
-.featuredImage {
+.featured-image {
     max-height: 300px;
+}
+
+.ingredient-list {
+    margin: 0;
 }
 </style>
