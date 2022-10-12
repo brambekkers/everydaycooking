@@ -19,7 +19,6 @@ const mealsStore = useMealsStore()
 <style lang="scss" scoped>
 #discover {
     width: 100%;
-    height: 600px;
     background-color: var(--secondary-color);
     z-index: 1;
     padding-top: 5rem;
@@ -36,7 +35,7 @@ const mealsStore = useMealsStore()
 
     #meallist {
         position: relative;
-        z-index: 2;
+        z-index: 5;
 
         :deep(.meal) {
             height: 400px;

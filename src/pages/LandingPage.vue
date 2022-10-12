@@ -27,11 +27,10 @@ import SearchBar from '../components/SearchBar.vue'
     inset: 0;
     top: 5rem;
 
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-height: 100vh;
+    min-height: 100vh;
 
     .searchContainer {
         width: 600px;
@@ -42,8 +41,6 @@ import SearchBar from '../components/SearchBar.vue'
             margin: auto;
         }
     }
-
-
 
     .baking {
         left: 5%;
@@ -66,7 +63,6 @@ import SearchBar from '../components/SearchBar.vue'
         width: 20vw;
         max-width: 700px;
         rotate: 20deg;
-
     }
 }
 </style>
