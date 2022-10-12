@@ -55,10 +55,12 @@ export const useMealsStore = defineStore("mealsStore", {
 			ls.setItem("favorite_recipes", JSON.stringify(this.favorites));
 		},
 		async getFavoritesFromLocalStorage() {
+			// Check if localFav is avalible in localstorage
 			const ls = window.localStorage;
 			const localFav = JSON.parse(ls.getItem("favorite_recipes"));
 			if (!localFav) return;
 
+			// If avalible update favorites and get meals from api
 			this.favorites = localFav;
 			for (const fav of this.favorites) {
 				const meal = await useApiStore().searchMealByID(fav);
