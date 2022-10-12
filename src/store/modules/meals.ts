@@ -35,10 +35,11 @@ export const useMealsStore = defineStore("mealsStore", {
 		async addRandomMeals() {
 			this.randomMeals = await useApiStore().getThreeRandomMeals();
 		},
-		addToFavorite(id: string) {
+		addToFavorite(id: string): string[] {
 			// Create an array with unique items
 			this.favorites = [...new Set([...this.favorites, id])];
 			this.addFavoritesToLocalStorage();
+			return this.favorites;
 		},
 		removeFromFavorite(id: string) {
 			const index = this.favorites.findIndex((fav) => fav === id);
