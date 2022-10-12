@@ -3,6 +3,7 @@
 import { Meal } from '@/types/Meals'
 import CardHeader from '@/components/meals/meal/MealCardHeader.vue'
 import MealInstructions from '@/components/meals/meal/MealInstructions.vue'
+import MealTags from '@/components/meals/meal/MealTags.vue'
 import VideoPlayer from '@/components/meals/meal/VideoPlayer.vue'
 
 defineProps<{ meal: Meal; }>();
@@ -15,7 +16,9 @@ defineProps<{ meal: Meal; }>();
         <CardHeader :id="meal.idMeal" :title="meal.strMeal" />
         <div class="card-body">
             <hr />
-            <h3 class="subtitle">Ingredients</h3>
+            <h3 class="subtitle">Ingredients
+                <MealTags v-if="meal.strTags" :tags="meal.strTags" />
+            </h3>
             <ul>
                 <template v-for="item in 20">
                     <li v-if="meal[`strIngredient${item+1}`]" :key="item">
@@ -33,6 +36,12 @@ defineProps<{ meal: Meal; }>();
 
 
 <style lang="scss" scoped>
+.subtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .featuredImage {
     max-height: 300px;
 }

@@ -7,8 +7,11 @@ const routes: Array<RouteRecordRaw> = [
 		component: () => import("../pages/LandingPage.vue"),
 	},
 	{
+		path: "/meals/",
+		redirect: "/",
+	},
+	{
 		path: "/meals/:search",
-		alias: "/meals",
 		name: "Search meals",
 		component: () => import("../pages/MealSearch.vue"),
 	},
