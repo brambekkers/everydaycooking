@@ -1,18 +1,17 @@
-<script setup>
+<script setup lang="ts">
 import { useMealsStore } from '../../store'
-
-const mealsStore = useMealsStore()
 import MealsList from '../meals/MealsList.vue'
 
+const mealsStore = useMealsStore()
 </script>
 
 
 <template>
-    <div id="discover">
+    <section id="discover">
         <h2>Discover a new meal</h2>
         <MealsList id="meallist" :meals="mealsStore.randomMeals" />
 
-    </div>
+    </section>
 </template>
 
 

@@ -1,17 +1,13 @@
 <template>
-    <div id="noMeals">
+    <div id="searchText">
         <i class="fa-solid fa-magnifying-glass" />
         <p>Type the name of your dish in the search bar.</p>
         <p>You can also enter an ingredient!</p>
     </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
-
 <style scoped lang="scss">
-#noMeals {
+#searchText {
     height: 50vh;
     display: flex;
     flex-direction: column;

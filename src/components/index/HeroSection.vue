@@ -1,5 +1,5 @@
 <template>
-    <div class="hero">
+    <section class="hero">
         <h2>Take the hassle out of</h2>
         <h2>your daily <span class="accentColor">dinner</span>!</h2>
 
@@ -11,7 +11,7 @@
             Cooking has never been so easy.
             Each day is a party with <span class="fw-semibold"> Everyday Cooking.</span>
         </div>
-    </div>
+    </section>
 </template>
 
 <style lang="scss" scoped>

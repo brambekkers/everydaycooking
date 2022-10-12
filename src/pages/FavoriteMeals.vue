@@ -9,19 +9,13 @@ const mealsStore = useMealsStore()
     <div>
         <h2>My Favorite Recipes</h2>
         <MealsList :meals="mealsStore.favoriteMeals" />
-        <img class="float pot" src="../assets/svg/Pot.svg" alt="cooking pot">
+        <img class="floating-image pot" src="../assets/svg/Pot.svg" alt="cooking pot">
     </div>
 </template>
 
 <style lang="scss" scoped>
 h2 {
     margin: 0;
-}
-
-.float {
-    position: absolute;
-    opacity: 0.3;
-    z-index: -1;
 }
 
 .pot {

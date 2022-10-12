@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Nav from './components/Nav.vue'
+import NavBar from './components/NavBar.vue'
 import { onMounted } from 'vue'
 import { useMealsStore } from './store'
 
@@ -16,7 +16,7 @@ onMounted(() => {
 
 <template>
 	<div id="app" :class="{darkmode : isDarkMode}">
-		<Nav />
+		<NavBar />
 		<main>
 			<router-view v-slot="{ Component }">
 				<transition name="fade" mode="out-in">

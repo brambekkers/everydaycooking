@@ -10,7 +10,7 @@ import SearchText from '../components/meals/SearchText.vue'
 const hasSearch = ref(false)
 const latestMeals = ref([])
 
-function updateLatestMeals(meals: Meal[]) {
+function updateLatestMeals(meals: Meal[]): void {
     latestMeals.value = meals
     hasSearch.value = true
 }
@@ -18,7 +18,7 @@ function updateLatestMeals(meals: Meal[]) {
 
 <template>
     <div>
-        <SearchBar @updateMeals="updateLatestMeals" />
+        <SearchBar @update-meals="updateLatestMeals" />
         <SearchText v-if="!hasSearch" />
         <!-- Only if there is a current search for a meal -->
         <MealsList v-else-if="latestMeals?.length" :meals="latestMeals" />
@@ -26,19 +26,13 @@ function updateLatestMeals(meals: Meal[]) {
         <!-- If no meals are avalible show message -->
         <NoMealsFound v-else />
 
-        <img class="float fried" src="../assets/svg/Fried.svg" alt="fried">
-        <img class="float mitten" src="../assets/svg/Mitten.svg" alt="mitten">
+        <img class="floating-image fried" src="../assets/svg/Fried.svg" alt="fried">
+        <img class="floating-image mitten" src="../assets/svg/Mitten.svg" alt="mitten">
     </div>
 </template>
 
 
 <style lang="scss" scoped>
-.float {
-    position: absolute;
-    opacity: 0.3;
-    z-index: -1;
-}
-
 .fried {
     left: 5%;
     bottom: 20%;

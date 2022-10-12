@@ -37,7 +37,7 @@ onMounted(() => {
 <template>
     <div class="searchContainer">
         <i class="search-icon fa-solid fa-magnifying-glass"></i>
-        <input v-model="searchText" placeholder="Search meal..." type="text" v-on:keyup.enter="search" />
+        <input v-model="searchText" placeholder="Search meal..." type="text" @keyup.enter="search" />
     </div>
 </template>
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-const props = defineProps<{ src: String; }>();
+const props = defineProps<{ src: string; }>();
 const embedSrc = computed(() => props.src.replace('watch?v=', 'embed/'))
 
 </script>

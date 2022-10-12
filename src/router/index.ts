@@ -4,24 +4,24 @@ const routes: Array<RouteRecordRaw> = [
 	{
 		path: "/",
 		name: "Start",
-		component: () => import("../pages/Index.vue"),
+		component: () => import("../pages/LandingPage.vue"),
 	},
 	{
 		path: "/meals/:search",
 		alias: "/meals",
 		name: "Search meals",
-		component: () => import("../pages/Meals.vue"),
+		component: () => import("../pages/MealSearch.vue"),
 	},
 	{
 		path: "/meal/:mealID",
 		alias: "/meal",
 		name: "Meal",
-		component: () => import("../pages/Meal.vue"),
+		component: () => import("../pages/MealDetails.vue"),
 	},
 	{
 		path: "/meals/favorites",
 		name: "Favorites",
-		component: () => import("../pages/Favorites.vue"),
+		component: () => import("../pages/FavoriteMeals.vue"),
 	},
 ];
 

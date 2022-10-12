@@ -1,7 +1,8 @@
 
 <script setup lang="ts">
-import { Meal } from '../../../types/Meals'
-import CardHeader from './CardHeader.vue'
+import { Meal } from '@/types/Meals'
+import CardHeader from '@/components/meals/meal/MealCardHeader.vue'
+import MealInstructions from '@/components/meals/meal/MealInstructions.vue'
 
 defineProps<{ meal: Meal; }>();
 
@@ -10,12 +11,11 @@ defineProps<{ meal: Meal; }>();
 <template>
     <div class="meal card">
         <img class="featuredImage" :src="meal.strMealThumb" />
-        <CardHeader :title="meal.strMeal" :id="meal.idMeal" />
+        <CardHeader :id="meal.idMeal" :title="meal.strMeal" />
         <div class="card-body">
             <hr />
             <div class="instructionContainer">
-                <p v-html="meal.strInstructions"></p>
-
+                <MealInstructions :instructions="meal.strInstructions" />
             </div>
             <button class="btn" @click="$router.push(`/meal/${meal.idMeal}`)">View Recipe</button>
         </div>

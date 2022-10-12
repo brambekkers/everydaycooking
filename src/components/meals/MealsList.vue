@@ -1,14 +1,14 @@
 
 <script setup lang="ts">
-import MealItem from './meal/MealCardSmall.vue'
-import { Meal } from '../../types/Meals'
+import MealItem from '@/components/meals/meal/MealCardSmall.vue'
+import { Meal } from '@/types/Meals'
 
 defineProps<{ meals: Meal[]; }>();
 </script>
 
 <template>
     <div class="mealList">
-        <MealItem v-for="meal of meals" :meal="meal" class="meal" />
+        <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" class="meal" />
     </div>
 </template>
 
@@ -25,12 +25,6 @@ defineProps<{ meals: Meal[]; }>();
     .meal {
         aspect-ratio: 4/6;
         height: 580px;
-
-
-
-
-
-        &:last-child {}
     }
 
     @media (max-width: 900px) {

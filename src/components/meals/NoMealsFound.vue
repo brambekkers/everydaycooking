@@ -6,10 +6,6 @@
     </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
-
 <style scoped lang="scss">
 #noMeals {
     height: 50vh;

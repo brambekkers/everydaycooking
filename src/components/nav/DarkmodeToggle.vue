@@ -1,21 +1,16 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 const isDarkmode = ref(false)
-function setDarkmode(val) {
+function setDarkmode(val: boolean) {
     isDarkmode.value = val
-    if (val) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
-    else {
-        document.documentElement.setAttribute('data-theme', 'light');
-    }
+    document.documentElement.setAttribute('data-theme', val ? 'dark' : 'light');
 }
 </script>
 
 <template>
     <div>
-        <i class="darkmode fa-solid fa-sun" v-if="!isDarkmode" @click="setDarkmode(true)" />
-        <i class="darkmode fa-solid fa-moon" v-if="isDarkmode" @click="setDarkmode(false)" />
+        <i v-if="!isDarkmode" class="darkmode fa-solid fa-sun" @click="setDarkmode(true)" />
+        <i v-if="isDarkmode" class="darkmode fa-solid fa-moon" @click="setDarkmode(false)" />
     </div>
 </template>
 

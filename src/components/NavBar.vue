@@ -1,25 +1,21 @@
-<script setup>
-import Menu from '../components/nav/Menu.vue'
-import DarkmodeToggle from '../components/nav/DarkmodeToggle.vue'
-
-import { ref } from 'vue'
-const darkmode = ref(false)
+<script setup lang="ts">
+import NavMenu from '@/components/nav/NavMenu.vue'
+import DarkmodeToggle from '@/components/nav/DarkmodeToggle.vue'
 </script>
 
 <template>
     <nav id="navbar">
-        <div class="navContainer">
+        <div class="nav-container">
             <router-link class="logo" to="/">
                 <i class="fa-solid fa-utensils" />
                 <button>Everyday Cooking</button>
             </router-link>
-            <Menu />
+            <NavMenu class="menu-desktop" />
             <DarkmodeToggle />
         </div>
+        <NavMenu class="menu-mobile" />
     </nav>
 </template>
-
-
 
 <style lang="scss" scoped>
 #navbar {
@@ -29,9 +25,11 @@ const darkmode = ref(false)
     background-color: var(--background-secondary);
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 
-    .navContainer {
+    .nav-container {
         height: 100%;
         width: 100%;
         max-width: 1400px;
@@ -39,8 +37,6 @@ const darkmode = ref(false)
         display: flex;
         align-items: center;
         gap: 1rem;
-
-
 
         i {
             cursor: pointer;
@@ -73,13 +69,20 @@ const darkmode = ref(false)
 
             }
         }
+    }
 
-        .darkmode {
-            font-size: 1.5rem;
-            min-width: 30px;
+    .menu-desktop {
+        @media(max-width: 600px) {
+            display: none;
         }
+    }
 
+    .menu-mobile {
+        display: none;
 
+        @media(max-width: 600px) {
+            display: flex;
+        }
     }
 }
 </style>

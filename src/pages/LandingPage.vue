@@ -1,21 +1,21 @@
-<script setup>
-import Hero from '../components/index/Hero.vue'
-import Discover from '../components/index/Discover.vue'
+<script setup lang="ts">
+import HeroSection from '../components/index/HeroSection.vue'
+import DiscoverSection from '../components/index/DiscoverSection.vue'
 import SearchBar from '../components/SearchBar.vue'
 
 </script>
 
 <template>
     <div id="index">
-        <Hero />
+        <HeroSection />
         <div class="searchContainer">
             <SearchBar />
         </div>
-        <Discover />
+        <DiscoverSection />
 
-        <img class="float chef" src="../assets/svg/Chef.svg" alt="chef">
-        <img class="float pot" src="../assets/svg/Pot.svg" alt="cooking pot">
-        <img class="float baking" src="../assets/svg/Baking.svg" alt="baking">
+        <img class="floating-image chef" src="../assets/svg/Chef.svg" alt="chef">
+        <img class="floating-image pot" src="../assets/svg/Pot.svg" alt="cooking pot">
+        <img class="floating-image baking" src="../assets/svg/Baking.svg" alt="baking">
     </div>
 </template>
 
@@ -43,11 +43,7 @@ import SearchBar from '../components/SearchBar.vue'
         }
     }
 
-    .float {
-        position: fixed;
-        opacity: 0.3;
-        z-index: 1;
-    }
+
 
     .baking {
         left: 5%;
@@ -62,17 +58,13 @@ import SearchBar from '../components/SearchBar.vue'
         width: 15vw;
         max-width: 500px;
         rotate: -10deg;
-
-
     }
 
     .pot {
         top: 70%;
         left: -5%;
-
         width: 20vw;
         max-width: 700px;
-
         rotate: 20deg;
 
     }
