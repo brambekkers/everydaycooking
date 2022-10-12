@@ -1,5 +1,9 @@
 # Front-end Assignment
 
+Hello, how nice of you to come and see my recipe app. My name is Bram Bekkers and this is my execution of the MealDB assignment.
+
+I made this app next to my full-time job. I have tried to implement all aspects of my skills in this app. Can I do more? Yes. However, I also tried to build something within a certain amount of time.
+
 ## How to run the application
 
 Open terminal and run:
@@ -22,3 +26,7 @@ I have opted for the classic vue folder structure. The pages can be found in the
 - Darkmode
 - Favorites recipes
 - Storage in localstorage
+
+## What I don't have
+
+I used a linter but didn't use any additional testing libaries. In the past I have programmed a lot by myself and I want/need to develop this skill further.
