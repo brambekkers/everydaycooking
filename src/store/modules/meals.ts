@@ -26,7 +26,9 @@ export const useMealsStore = defineStore("mealsStore", {
 
 			// Filter the unique meals
 			// Add unique meals to all meals array for later use
-			const newUniqueMeals = newMeals.filter((meal1) => !this.meals.find((meal2) => meal1.idMeal === meal2.idMeal));
+			const newUniqueMeals = newMeals.filter(
+				(meal1) => !this.meals.find((meal2) => meal1.idMeal === meal2.idMeal)
+			);
 			this.meals = [...this.meals, ...newUniqueMeals];
 		},
 		getMealByID(id: string) {
@@ -54,7 +56,10 @@ export const useMealsStore = defineStore("mealsStore", {
 		},
 		async getFavoritesFromLocalStorage() {
 			const ls = window.localStorage;
-			this.favorites = JSON.parse(ls.getItem("favorite_recipes"));
+			const localFav = JSON.parse(ls.getItem("favorite_recipes"));
+			if (!localFav) return;
+
+			this.favorites = localFav;
 			for (const fav of this.favorites) {
 				const meal = await useApiStore().searchMealByID(fav);
 				if (!meal) continue;
