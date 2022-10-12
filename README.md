@@ -4,6 +4,8 @@ Hello, how nice of you to come and see my recipe app. My name is Bram Bekkers an
 
 I made this app next to my full-time job. I have tried to implement all aspects of my skills in this app. Can I do more? Yes. However, I also tried to build something within a certain amount of time.
 
+I hope you like the application. I am happy to explain my ideas in a personal interview.
+
 ## How to run the application
 
 Open terminal and run:
